@@ -7,7 +7,7 @@ public class window extends JFrame implements ActionListener {
     private static final int resX = 1280;
 
     private static final int resY = 720;
-
+    private JPanel player;
     private JPanel pannelMenu;
     private JButton btGioca;
     private  JButton btEsci;
@@ -40,7 +40,7 @@ public class window extends JFrame implements ActionListener {
         JLabel titolo=new JLabel("Micai Simulator");
         titolo.setFont(new Font("Courier",Font.BOLD,75));
         pannelMenu.add(titolo);
-        titolo.setBounds(375,0,1240,150);
+        titolo.setBounds(360,40,575,75);
 
 
 
@@ -49,15 +49,17 @@ public class window extends JFrame implements ActionListener {
         btEsci=new JButton("Exit");
         JPanel menu=new JPanel();
         pannelMenu.add(menu);
-        menu.setBounds(550,300,175,40);
+        menu.setBounds(525,330,230,60);
 
         menu.setBackground(new Color(36,66,138));
         menu.add(btGioca);
         menu.add(btEsci);
 
         btEsci.addActionListener(this);
+        btEsci.setPreferredSize(new Dimension(100,50));
         btGioca.addActionListener(this);
-        //icona
+        btGioca.setPreferredSize(new Dimension(100,50));
+
 
         repaint();
 
@@ -87,6 +89,8 @@ public class window extends JFrame implements ActionListener {
         }
     }
     private void guiGioco(){
+
+
         //impostazione pannelHUD
         pannelHUD=new JPanel();
         add(pannelHUD);
@@ -95,9 +99,19 @@ public class window extends JFrame implements ActionListener {
         //bottone menu
         btMenu =new JButton("Menu");
         btMenu.setBounds(0,0,60,40);
+        btMenu.setBackground(new Color(71,54,97));
         pannelHUD.setBounds(0,0,resX,resY);
         btMenu.addActionListener(this);
         pannelHUD.add(btMenu);
+
+        //inserimento player
+        player=new JPanel();
+        pannelHUD.add(player);
+
+        player.setBounds(630,290,20,40);
+        Micai mik=new Micai();
+        mik.add(player);
+
 
 
     }

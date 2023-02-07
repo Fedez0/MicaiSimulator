@@ -1,13 +1,16 @@
-public class Personaggio {
-    private int vita = 100;
-    private float speed= 100;
+import javax.swing.*;
+
+abstract class Personaggio {
+    protected int vita = 100;
+    protected JPanel avatar;
+    protected float speed= 100;
 
 
-    public float getSpeed() {
+    protected float getSpeed() {
         return speed;
     }
 
-    public int getVita() {
+    protected int getVita() {
         return vita;
     }
 }
