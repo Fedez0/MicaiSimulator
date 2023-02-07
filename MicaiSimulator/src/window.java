@@ -9,8 +9,10 @@ import java.io.IOException;
 
 public class window extends JFrame implements ActionListener {
     private JPanel pannelMain;
+    private JButton btGioca;
+    private  JButton btEsci;
     public window(){
-        setTitle("Micai simulator");
+        setTitle("Micai Simulator");
         gui();
         impostaLookAndFeel();
         setVisible(true);
@@ -46,8 +48,8 @@ public class window extends JFrame implements ActionListener {
 
 
         //Tasti menu
-        JButton btGioca=new JButton("Play!");
-        JButton btEsci=new JButton("Exit");
+        btGioca=new JButton("Play!");
+        btEsci=new JButton("Exit");
         JPanel menu=new JPanel();
         pannelMain.add(menu);
         menu.setBounds(550,300,175,40);
@@ -57,6 +59,7 @@ public class window extends JFrame implements ActionListener {
         menu.add(btEsci);
 
         btEsci.addActionListener(this);
+        btGioca.addActionListener(this);
         //icona
         Image icon=Toolkit.getDefaultToolkit().getImage("C:\\Users\\Windows\\Pictures\\Saved Pictures\\avatar\\7e197f016c320b0ea20409ab0d848824.jpg");
         setIconImage(icon);
@@ -69,8 +72,16 @@ public class window extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e){
-        setVisible(false);
-        dispose();
+        Object o= e.getSource();
+        if(o==btEsci){
+            setVisible(false);
+            dispose();
+        }
+        if(o==btGioca){
+            remove(pannelMain);
+            repaint();
+
+        }
     }
 
 }
