@@ -1,14 +1,10 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 
 public class window extends JFrame implements ActionListener {
-    private JPanel pannelMain;
+    private JPanel pannelMenu;
     private JButton btGioca;
     private  JButton btEsci;
     public window(){
@@ -31,18 +27,18 @@ public class window extends JFrame implements ActionListener {
         //finisci
 
 
-        pannelMain=new JPanel();
-        add(pannelMain);
-        pannelMain.setLayout(null);
+        pannelMenu =new JPanel();
+        add(pannelMenu);
+        pannelMenu.setLayout(null);
 
 
-        pannelMain.setBackground(new Color(83,125,224));
+        pannelMenu.setBackground(new Color(83,125,224));
 
 
         //titolo
         JLabel titolo=new JLabel("Micai Simulator");
         titolo.setFont(new Font("Courier",Font.BOLD,75));
-        pannelMain.add(titolo);
+        pannelMenu.add(titolo);
         titolo.setBounds(375,0,1240,150);
 
 
@@ -51,7 +47,7 @@ public class window extends JFrame implements ActionListener {
         btGioca=new JButton("Play!");
         btEsci=new JButton("Exit");
         JPanel menu=new JPanel();
-        pannelMain.add(menu);
+        pannelMenu.add(menu);
         menu.setBounds(550,300,175,40);
 
         menu.setBackground(new Color(36,66,138));
@@ -78,10 +74,14 @@ public class window extends JFrame implements ActionListener {
             dispose();
         }
         if(o==btGioca){
-            remove(pannelMain);
-            repaint();//ewqeq
+            remove(pannelMenu);
+            guiGioco();
+            repaint();
 
         }
+    }
+    public void guiGioco(){
+
     }
 
 }
