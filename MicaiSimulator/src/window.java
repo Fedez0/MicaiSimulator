@@ -4,11 +4,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class window extends JFrame implements ActionListener {
+    private static final int resX = 1280;
+
+    private static final int resY = 720;
+
     private JPanel pannelMenu;
     private JButton btGioca;
     private  JButton btEsci;
+    private JButton btMenu;
+    private JPanel pannelHUD;
     public window(){
         setTitle("Micai Simulator");
+        impostaFinestra();
         gui();
         impostaLookAndFeel();
         setVisible(true);
@@ -18,12 +25,6 @@ public class window extends JFrame implements ActionListener {
         //impostazioni della finestra
 
 
-        setResizable(false);
-        setSize(new Dimension(1280,720));
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //background
-        Image background =Toolkit.getDefaultToolkit().getImage("C:\\Users\\Windows\\Pictures\\Saved Pictures\\avatar\\7e197f016c320b0ea20409ab0d848824.jpg");
         //finisci
 
 
@@ -59,6 +60,7 @@ public class window extends JFrame implements ActionListener {
         //icona
         Image icon=Toolkit.getDefaultToolkit().getImage("C:\\Users\\Windows\\Pictures\\Saved Pictures\\avatar\\7e197f016c320b0ea20409ab0d848824.jpg");
         setIconImage(icon);
+        repaint();
 
     }
     private void impostaLookAndFeel() {
@@ -75,11 +77,32 @@ public class window extends JFrame implements ActionListener {
         }
         if(o==btGioca){
             remove(pannelMenu);
-
+            guiGioco();
             repaint();
-
+        }
+        if(o== btMenu){
+            remove(pannelHUD);
+            add(pannelMenu);
+            repaint();
         }
     }
+    private void guiGioco(){
+        pannelHUD=new JPanel();
+        btMenu =new JButton("Menu");
+        btMenu.setBounds(0,0,60,40);
+        pannelHUD.setBounds(0,0,resX,resY);
+        btMenu.addActionListener(this);
+        pannelHUD.add(btMenu);
+        add(pannelHUD);
+    }
+    private void impostaFinestra(){
+        setResizable(false);
+        setSize(new Dimension(resX,resY));
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //background
+        Image background =Toolkit.getDefaultToolkit().getImage("C:\\Users\\Windows\\Pictures\\Saved Pictures\\avatar\\7e197f016c320b0ea20409ab0d848824.jpg");
 
+    }
 
 }
