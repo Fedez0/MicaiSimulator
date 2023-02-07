@@ -38,7 +38,7 @@ public class window extends JFrame implements ActionListener {
 
 
         //titolo
-        JLabel titolo=new JLabel("Micai simulator");
+        JLabel titolo=new JLabel("Micai Simulator");
         titolo.setFont(new Font("Courier",Font.BOLD,75));
         pannelMain.add(titolo);
         titolo.setBounds(375,0,1240,150);
