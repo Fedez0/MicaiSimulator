@@ -3,7 +3,6 @@ public class Personaggio {
     private float speed= 100;
 
 
-
     public float getSpeed() {
         return speed;
     }

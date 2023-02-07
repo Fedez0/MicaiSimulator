@@ -75,6 +75,7 @@ public class window extends JFrame implements ActionListener {
             dispose();
         }
         if(o==btGioca){
+
             remove(pannelMenu);
             guiGioco();
             repaint();
