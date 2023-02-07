@@ -58,8 +58,7 @@ public class window extends JFrame implements ActionListener {
         btEsci.addActionListener(this);
         btGioca.addActionListener(this);
         //icona
-        Image icon=Toolkit.getDefaultToolkit().getImage("C:\\Users\\Windows\\Pictures\\Saved Pictures\\avatar\\7e197f016c320b0ea20409ab0d848824.jpg");
-        setIconImage(icon);
+
         repaint();
 
     }
@@ -87,13 +86,22 @@ public class window extends JFrame implements ActionListener {
         }
     }
     private void guiGioco(){
+        //impostazione pannelHUD
         pannelHUD=new JPanel();
+        add(pannelHUD);
+        pannelHUD.setBackground(new Color(90,82,105));
+
+        //bottone menu
         btMenu =new JButton("Menu");
         btMenu.setBounds(0,0,60,40);
         pannelHUD.setBounds(0,0,resX,resY);
         btMenu.addActionListener(this);
         pannelHUD.add(btMenu);
-        add(pannelHUD);
+
+
+
+
+
     }
     private void impostaFinestra(){
         setResizable(false);
@@ -103,6 +111,8 @@ public class window extends JFrame implements ActionListener {
         //background
         Image background =Toolkit.getDefaultToolkit().getImage("C:\\Users\\Windows\\Pictures\\Saved Pictures\\avatar\\7e197f016c320b0ea20409ab0d848824.jpg");
 
+        Image icon=Toolkit.getDefaultToolkit().getImage("C:\\Users\\Windows\\Pictures\\Saved Pictures\\avatar\\7e197f016c320b0ea20409ab0d848824.jpg");
+        setIconImage(icon);
     }
 
 }
