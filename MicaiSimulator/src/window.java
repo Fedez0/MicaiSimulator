@@ -6,9 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class window extends JFrame implements ActionListener {
     private JPanel pannelMain;
+    private JButton btEsci;
+    private JButton btGioca;
     public window(){
         setTitle("Micai simulator");
         gui();
@@ -46,8 +49,8 @@ public class window extends JFrame implements ActionListener {
 
 
         //Tasti menu
-        JButton btGioca=new JButton("Play!");
-        JButton btEsci=new JButton("Exit");
+        btGioca=new JButton("Play!");
+        btEsci=new JButton("Exit");
         JPanel menu=new JPanel();
         pannelMain.add(menu);
         menu.setBounds(550,300,175,40);
@@ -55,7 +58,7 @@ public class window extends JFrame implements ActionListener {
         menu.setBackground(new Color(36,66,138));
         menu.add(btGioca);
         menu.add(btEsci);
-
+        btGioca.addActionListener(this);
         btEsci.addActionListener(this);
         //icona
         Image icon=Toolkit.getDefaultToolkit().getImage("C:\\Users\\Windows\\Pictures\\Saved Pictures\\avatar\\7e197f016c320b0ea20409ab0d848824.jpg");
@@ -69,8 +72,14 @@ public class window extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e){
-        setVisible(false);
-        dispose();
+        Object o=e.getSource();
+        if(o==btEsci){
+            setVisible(false);
+            dispose();
+        }
+        if(o==btGioca){
+            System.out.println("Ci siamo");
+        }
     }
 
 }
