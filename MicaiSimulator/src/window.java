@@ -79,7 +79,7 @@ public class window extends JFrame implements ActionListener {
         }
         if(o==btGioca){
             remove(pannelMain);
-            repaint();
+            repaint();//ewqeq
 
         }
     }
