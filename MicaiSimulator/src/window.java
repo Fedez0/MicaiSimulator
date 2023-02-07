@@ -75,13 +75,11 @@ public class window extends JFrame implements ActionListener {
         }
         if(o==btGioca){
             remove(pannelMenu);
-            guiGioco();
+
             repaint();
 
         }
     }
-    public void guiGioco(){
 
-    }
 
 }
