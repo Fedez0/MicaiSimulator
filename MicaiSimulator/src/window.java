@@ -99,9 +99,6 @@ public class window extends JFrame implements ActionListener {
         pannelHUD.add(btMenu);
 
 
-
-
-
     }
     private void impostaFinestra(){
         setResizable(false);
