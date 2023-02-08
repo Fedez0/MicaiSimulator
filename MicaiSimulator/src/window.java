@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.tools.Tool;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,11 +36,6 @@ public class window extends JFrame implements ActionListener {
     private void gui(){
 
         //impostazioni della finestra
-
-
-        //finisci
-
-
         pannelMenu =new JPanel();
         add(pannelMenu);
         pannelMenu.setLayout(null);
@@ -54,9 +50,16 @@ public class window extends JFrame implements ActionListener {
         pannelMenu.add(titolo);
         titolo.setBounds(360,40,575,75);
 
+        //immgagine
+
+        Toolkit t=Toolkit.getDefaultToolkit();
+        ImageIcon i=new ImageIcon("C:\\Users\\Windows\\Desktop\\pazzurdo_risultato.png");
+        JLabel imagine=new JLabel(i);
+        imagine.setBounds(40,40,649,658);
+        pannelMenu.add(imagine);
 
 
-        //Tasti menu ()
+                //Tasti menu ()
         btGioca=new JButton("Play!");
         btEsci=new JButton("Exit");
         JPanel menu=new JPanel();
@@ -116,7 +119,7 @@ public class window extends JFrame implements ActionListener {
         pannelHUD.setBackground(new Color(90,82,105));
 
 
-        // input
+
 
 
         //bottone menu
